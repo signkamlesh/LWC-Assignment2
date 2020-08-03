@@ -1,16 +1,14 @@
-/**
- * A basic pub-sub mechanism for sibling component communication
- *
- * TODO - adopt standard flexipage sibling communication mechanism when it's available.
+/*To store all the JS functions for the various LWC
+
+    * This JavaScript file is used to provide many reusability functionality like pubsub 
+
+    * Reusable Apex Calls to Server, Preparing Dynamic Toasts
+ 
  */
 
 const events = {};
 
-/**
- * Confirm that two page references have the same attributes
- * @param {object} pageRef1 - The first page reference
- * @param {object} pageRef2 - The second page reference
- */
+
 const samePageRef = (pageRef1, pageRef2) => {
     const obj1 = pageRef1.attributes;
     const obj2 = pageRef2.attributes;
@@ -21,12 +19,7 @@ const samePageRef = (pageRef1, pageRef2) => {
         });
 };
 
-/**
- * Registers a callback for an event
- * @param {string} eventName - Name of the event to listen for.
- * @param {function} callback - Function to invoke when said event is fired.
- * @param {object} thisArg - The value to be passed as the this parameter to the callback function is bound.
- */
+
 const registerListener = (eventName, callback, thisArg) => {
     // Checking that the listener has a pageRef property. We rely on that property for filtering purpose in fireEvent()
     if (!thisArg.pageRef) {
@@ -46,12 +39,7 @@ const registerListener = (eventName, callback, thisArg) => {
     }
 };
 
-/**
- * Unregisters a callback for an event
- * @param {string} eventName - Name of the event to unregister from.
- * @param {function} callback - Function to unregister.
- * @param {object} thisArg - The value to be passed as the this parameter to the callback function is bound.
- */
+
 const unregisterListener = (eventName, callback, thisArg) => {
     if (events[eventName]) {
         events[eventName] = events[eventName].filter(
