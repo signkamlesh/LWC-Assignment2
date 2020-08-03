@@ -21,7 +21,7 @@ const samePageRef = (pageRef1, pageRef2) => {
 
 
 const registerListener = (eventName, callback, thisArg) => {
-    // Checking that the listener has a pageRef property. We rely on that property for filtering purpose in fireEvent()
+    // Checking that the listener has a pageRef property. 
     if (!thisArg.pageRef) {
         throw new Error(
             'pubsub listeners need a "@wire(CurrentPageReference) pageRef" property'
@@ -73,7 +73,7 @@ const fireEvent = (pageRef, eventName, payload) => {
                 try {
                     listener.callback.call(listener.thisArg, payload);
                 } catch (error) {
-                    // fail silently
+                    
                 }
             }
         });
