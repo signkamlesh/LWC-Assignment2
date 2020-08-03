@@ -2,7 +2,7 @@
 
     * This JavaScript file is used to provide many reusability functionality like pubsub 
 
-    * Reusable Apex Calls to Server, Preparing Dynamic Toasts
+    * Reusable Apex Calls to Server
  
  */
 
